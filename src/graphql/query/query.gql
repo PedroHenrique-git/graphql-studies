@@ -1,0 +1,20 @@
+query GET_DATA {
+  id
+  age
+  name
+  salary
+  isUser
+  notNull
+  arrayString
+  user {
+    id
+    userName
+  }
+}
+
+query GET_USERS {
+  users {
+    id
+    userName
+  }
+}

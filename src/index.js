@@ -11,6 +11,13 @@ const server = new ApolloServer({
       isUser: Boolean
       notNull: String!
       arrayString: [String!]!
+      user: User!
+      users: [User!]!
+    }
+
+    type User {
+      id: ID!
+      userName: String!
     }
   `,
   resolvers: {
@@ -35,6 +42,17 @@ const server = new ApolloServer({
       },
       arrayString: async () => {
         return ['A', 'B', 'C', 'D'];
+      },
+      user: async () => {
+        return { id: uuidv4(), userName: 'pedro123' };
+      },
+      users: async () => {
+        return [
+          { id: uuidv4(), userName: 'user1' },
+          { id: uuidv4(), userName: 'user2' },
+          { id: uuidv4(), userName: 'user3' },
+          { id: uuidv4(), userName: 'user4' },
+        ];
       },
     },
   },
