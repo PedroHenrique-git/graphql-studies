@@ -1,17 +1,12 @@
-import { v4 as uuidv4 } from 'uuid';
-
 export const userResolvers = {
   Query: {
-    user: async () => {
-      return { id: uuidv4(), userName: 'pedro123' };
+    user: async (_, { id }, { fetch }) => {
+      const user = await fetch(`http://localhost:3004/users/${id}`);
+      return await user.json();
     },
-    users: async () => {
-      return [
-        { id: uuidv4(), userName: 'user1' },
-        { id: uuidv4(), userName: 'user2' },
-        { id: uuidv4(), userName: 'user3' },
-        { id: uuidv4(), userName: 'user4' },
-      ];
+    users: async (_, __, { fetch }) => {
+      const users = await fetch('http://localhost:3004/users');
+      return await users.json();
     },
   },
 };

@@ -1,17 +1,12 @@
-import { v4 as uuidv4 } from 'uuid';
-
 export const postResolver = {
   Query: {
-    post: async () => {
-      return { id: uuidv4(), title: 'post1' };
+    post: async (_, { id }, { fetch }) => {
+      const post = await fetch(`http://localhost:3004/posts/${id}`);
+      return await post.json();
     },
-    posts: async () => {
-      return [
-        { id: uuidv4(), title: 'post1' },
-        { id: uuidv4(), title: 'post2' },
-        { id: uuidv4(), title: 'post3' },
-        { id: uuidv4(), title: 'post4' },
-      ];
+    posts: async (_, __, { fetch }) => {
+      const posts = await fetch(`http://localhost:3004/posts`);
+      return await posts.json();
     },
   },
 };

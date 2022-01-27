@@ -1,0 +1,42 @@
+query GET_USER($userId: ID!) {
+  users {
+    id
+    firstName
+    lastName
+    createdAt
+  }
+  user(id: "470") {
+    id
+    firstName
+    lastName
+    indexRef
+  }
+}
+
+query GET_USERS {
+  users {
+    id
+    firstName
+    lastName
+    indexRef
+    userName
+  }
+}
+
+query GET_POST($postId: ID!) {
+  post(id: "860") {
+    id
+    body
+    title
+    createdAt
+    userId
+  }
+}
+
+query GET_POSTS {
+  posts {
+    id
+    title
+    userId
+  }
+}
