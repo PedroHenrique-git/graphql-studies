@@ -9,4 +9,10 @@ export const postResolver = {
       return await posts.json();
     },
   },
+  Post: {
+    unixTimeStamp: ({ createdAt }) => {
+      const dateInSeconds = Math.floor(new Date(createdAt).getTime() / 1000);
+      return dateInSeconds;
+    },
+  },
 };

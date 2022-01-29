@@ -1,0 +1,6 @@
+query GET_POSTS {
+  posts {
+    unixTimeStamp
+    createdAt
+  }
+}

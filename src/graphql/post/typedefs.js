@@ -13,5 +13,6 @@ export const postTypeDefs = gql`
     userId: String!
     indexRef: Int!
     createdAt: String!
+    unixTimeStamp: String!
   }
 `;
