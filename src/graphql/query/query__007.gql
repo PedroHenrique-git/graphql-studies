@@ -1,0 +1,13 @@
+query GET_POST($postId: ID!) {
+  post(id: $postId) {
+    ... on Post {
+      id
+      title
+    }
+
+    ... on PostNotFoundError {
+      message
+      statusCode
+    }
+  }
+}
