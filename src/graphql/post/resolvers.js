@@ -4,8 +4,9 @@ export const postResolver = {
       const post = await getPosts(`/${id}`);
       return await post.json();
     },
-    posts: async (_, __, { getPosts }) => {
-      const posts = await getPosts();
+    posts: async (_, { inputFilter }, { getPosts }) => {
+      const apiFiltersInput = new URLSearchParams(inputFilter).toString();
+      const posts = await getPosts('/?' + apiFiltersInput);
       return await posts.json();
     },
   },

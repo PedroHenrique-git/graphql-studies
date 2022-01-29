@@ -4,8 +4,9 @@ export const userResolvers = {
       const user = await getUsers(`/${id}`);
       return await user.json();
     },
-    users: async (_, __, { getUsers }) => {
-      const users = await getUsers();
+    users: async (_, { inputFilter }, { getUsers }) => {
+      const apiFiltersInput = new URLSearchParams(inputFilter).toString();
+      const users = await getUsers('/?' + apiFiltersInput);
       return await users.json();
     },
   },

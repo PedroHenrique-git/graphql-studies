@@ -1,0 +1,15 @@
+query GET_POSTS($inputFilter: ApiFiltersInput) {
+  posts(inputFilter: $inputFilter) {
+    id
+    title
+    indexRef
+  }
+}
+
+query GET_USERS($inputFilter: ApiFiltersInput) {
+  users(inputFilter: $inputFilter) {
+    id
+    firstName
+    lastName
+  }
+}
