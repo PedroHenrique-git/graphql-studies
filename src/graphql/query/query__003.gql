@@ -1,0 +1,13 @@
+query GET_POSTS($postId: ID!) {
+  post(id: $postId) {
+    id,
+    title
+  }
+}
+
+query GET_POSTS($postId: ID!, $teste: Boolean) {
+  post(id: $postId, teste: $teste) {
+    id,
+    title
+  }
+}

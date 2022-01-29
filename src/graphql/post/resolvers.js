@@ -1,11 +1,11 @@
 export const postResolver = {
   Query: {
-    post: async (_, { id }, { fetch }) => {
-      const post = await fetch(`http://localhost:3004/posts/${id}`);
+    post: async (_, { id }, { getPosts }) => {
+      const post = await getPosts(`/${id}`);
       return await post.json();
     },
-    posts: async (_, __, { fetch }) => {
-      const posts = await fetch(`http://localhost:3004/posts`);
+    posts: async (_, __, { getPosts }) => {
+      const posts = await getPosts();
       return await posts.json();
     },
   },
