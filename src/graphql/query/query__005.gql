@@ -1,0 +1,33 @@
+fragment postFragment on Post {
+  id
+  title
+  unixTimeStamp
+  body
+  userId  
+}
+
+query GET_POST($postId1: ID!, $postId2: ID!) {
+  post860: post(id: $postId1) {
+    ...postFragment   
+  }
+  post940: post(id: $postId2) {
+    ...postFragment  
+  }
+}
+
+query GET_POST($postId1: ID!, $postId2: ID!) {
+  post860: post(id: $postId1) {
+    id
+    title
+    unixTimeStamp
+    body
+    userId    
+  }
+  post940: post(id: $postId2) {
+    id
+    title
+    unixTimeStamp
+    body
+    userId   
+  }
+}

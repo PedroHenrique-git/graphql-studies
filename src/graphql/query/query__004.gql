@@ -4,3 +4,16 @@ query GET_POSTS {
     createdAt
   }
 }
+
+query GET_POSTS($postId1: ID!, $postId2: ID!) {
+  post860: post(id: $postId1){
+    id
+    title
+    unixTimeStamp
+  }
+  post940: post(id: $postId2){
+    id
+    title
+    unixTimeStamp
+  }
+}
