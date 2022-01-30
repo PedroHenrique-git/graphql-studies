@@ -1,0 +1,27 @@
+query GET_POST($postID: ID!) {
+  post(id: $postID) {
+    ... on Post {
+      id
+      title
+      user {
+        id
+        firstName
+        lastName
+        indexRef
+        createdAt
+      }
+    }
+  }
+}
+
+query GET_POSTS {
+  posts {
+    id
+    title
+    user {
+      id
+      firstName
+      lastName
+    }
+  }
+}
