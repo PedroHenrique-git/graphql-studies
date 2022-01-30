@@ -1,7 +1,10 @@
-import 'dotenv/config';
 import fetch from 'node-fetch';
+import getPosts from './graphql/post/utils';
+import { makeUserDataLoader } from './graphql/user/dataloaders';
+import getUsers from './graphql/user/utils';
 
 export default () => ({
-  getUsers: (path = '') => fetch(`${process.env.API_URL}/users` + path),
-  getPosts: (path = '') => fetch(`${process.env.API_URL}/posts` + path),
+  userDataLoader: makeUserDataLoader(getUsers(fetch)),
+  getUsers: getUsers(fetch),
+  getPosts: getPosts(fetch),
 });

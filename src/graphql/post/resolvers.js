@@ -1,14 +1,3 @@
-import DataLoader from 'dataloader';
-import 'dotenv/config';
-import fetch from 'node-fetch';
-
-const userDataLoader = new DataLoader(async (ids) => {
-  const urlQuery = ids.join('&id=');
-  const url = `${process.env.API_URL}/users/?id=${urlQuery}`;
-  const users = await (await fetch(url)).json();
-  return ids.map((id) => users.find((user) => user.id === id));
-});
-
 export const postResolver = {
   Query: {
     post: async (_, { id }, { getPosts }) => {
@@ -46,7 +35,7 @@ export const postResolver = {
       const dateInSeconds = Math.floor(new Date(createdAt).getTime() / 1000);
       return dateInSeconds;
     },
-    user: async ({ userId }) => {
+    user: async ({ userId }, _, { userDataLoader }) => {
       return userDataLoader.load(userId);
     },
   },
