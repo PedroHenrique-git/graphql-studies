@@ -10,4 +10,9 @@ export const userResolvers = {
       return await users.json();
     },
   },
+  User: {
+    posts: async ({ id }, _, { postDataLoader }) => {
+      return postDataLoader.load(id);
+    },
+  },
 };

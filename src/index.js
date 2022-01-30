@@ -9,5 +9,5 @@ const server = new ApolloServer({
 });
 
 server.listen(4003).then(({ url }) => {
-  console.log(`server executando na url ${url}`);
+  console.log(`server is running on ${url} 🚀`);
 });

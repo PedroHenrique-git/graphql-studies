@@ -1,0 +1,11 @@
+query GET_USERS {
+  users {
+    id
+    lastName
+    posts {
+      id
+      title
+      userId
+    }
+  }
+}
