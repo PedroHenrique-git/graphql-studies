@@ -7,6 +7,18 @@ query GET_POST($postId: ID!) {
   }
 }
 
+query GET_USER($userId: ID!) {
+  user(id: $userId) {
+    id
+    firstName
+    lastName
+    posts {
+      id
+      title
+    }
+  }
+}
+
 query GET_POSTS {
   posts {
     id

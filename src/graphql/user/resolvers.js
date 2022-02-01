@@ -11,8 +11,8 @@ export const userResolvers = {
     },
   },
   User: {
-    posts: async ({ id }, _, { postDataLoader }) => {
-      return postDataLoader.load(id);
+    posts: async ({ id }, _, { dataSources }) => {
+      return dataSources.postApi.batchLoadByUserId(id);
     },
   },
 };
