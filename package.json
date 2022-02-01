@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/PedroHenrique-git/graphql-studies#readme",
   "dependencies": {
+    "apollo-datasource-rest": "^3.5.1",
     "apollo-server": "^3.6.2",
     "dataloader": "^2.0.0",
     "dotenv": "^14.3.2",
