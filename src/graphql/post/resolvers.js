@@ -35,8 +35,8 @@ export const postResolver = {
       const dateInSeconds = Math.floor(new Date(createdAt).getTime() / 1000);
       return dateInSeconds;
     },
-    user: async ({ userId }, _, { userDataLoader }) => {
-      return userDataLoader.load(userId);
+    user: async ({ userId }, _, { dataSources }) => {
+      return dataSources.userApi.batchLoadByUserId(userId);
     },
   },
   PostResult: {

@@ -1,13 +1,13 @@
 export const userResolvers = {
   Query: {
-    user: async (_, { id }, { getUsers }) => {
-      const user = await getUsers(`/${id}`);
-      return await user.json();
+    user: async (_, { id }, { dataSources }) => {
+      const user = await dataSources.userApi.getUser(id);
+      return user;
     },
-    users: async (_, { inputFilter }, { getUsers }) => {
-      const apiFiltersInput = new URLSearchParams(inputFilter).toString();
-      const users = await getUsers('/?' + apiFiltersInput);
-      return await users.json();
+    users: async (_, { inputFilter }, { dataSources }) => {
+      const apiFiltersInput = new URLSearchParams(inputFilter);
+      const users = await dataSources.userApi.getUsers(apiFiltersInput);
+      return users;
     },
   },
   User: {

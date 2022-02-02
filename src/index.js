@@ -1,6 +1,7 @@
 import { ApolloServer } from 'apollo-server';
 import context from './context';
 import { PostsApi } from './graphql/post/datasources';
+import { UserApi } from './graphql/user/datasources';
 import { resolvers, typeDefs } from './schema';
 
 const server = new ApolloServer({
@@ -9,6 +10,7 @@ const server = new ApolloServer({
   context,
   dataSources: () => ({
     postApi: new PostsApi(),
+    userApi: new UserApi(),
   }),
 });
 
