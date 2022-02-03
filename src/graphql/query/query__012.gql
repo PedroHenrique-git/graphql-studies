@@ -1,0 +1,30 @@
+mutation CREATE_POST($createPostId: ID!) {
+  createPost(id: $createPostId) {
+    ... on Post {
+      id
+      title
+    }
+  }
+}
+
+mutation CREATE_POST($data: CreatePostInput!) {
+  createPost(data: $data) {
+    id
+    title
+    body
+  }
+}
+
+mutation CREATE_POST($data: CreatePostInput!) {
+  createPost(data: $data) {
+    id
+    title
+    body
+    user {
+      id
+      firstName
+      lastName
+      createdAt
+    }
+  }
+}

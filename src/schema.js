@@ -10,10 +10,17 @@ export const rootTypeDefs = gql`
   type Query {
     _empty: Boolean
   }
+
+  type Mutation {
+    _empty: Boolean
+  }
 `;
 
 export const rootResolvers = {
   Query: {
+    _empty: async () => true,
+  },
+  Mutation: {
     _empty: async () => true,
   },
 };

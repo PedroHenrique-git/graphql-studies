@@ -6,6 +6,10 @@ export const postTypeDefs = gql`
     posts(inputFilter: ApiFiltersInput): [Post!]!
   }
 
+  extend type Mutation {
+    createPost(data: CreatePostInput!): Post!
+  }
+
   union PostResult = PostNotFoundError | PostTimeoutError | Post
 
   interface PostError {
@@ -34,5 +38,11 @@ export const postTypeDefs = gql`
     user: User!
     createdAt: String!
     unixTimeStamp: String!
+  }
+
+  input CreatePostInput {
+    title: String!
+    body: String!
+    userId: String!
   }
 `;

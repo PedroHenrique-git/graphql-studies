@@ -54,4 +54,9 @@ export const postResolver = {
       return null;
     },
   },
+  Mutation: {
+    createPost: async (_, { data }, { dataSources }) => {
+      return dataSources.postApi.createPost(data);
+    },
+  },
 };
