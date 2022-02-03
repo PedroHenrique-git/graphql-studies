@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon -r dotenv/config -r sucrase/register src/index.js",
-    "start:server": "json-server --watch db.json --port 3004"
+    "start:server": "json-server --watch db.json --port 3004",
+    "dev:rest-methods": "nodemon -r dotenv/config -r sucrase/register src/rest-methods.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
+    "@types/node-fetch": "^3.0.3",
     "eslint": "^8.7.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
