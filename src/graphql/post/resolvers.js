@@ -58,5 +58,11 @@ export const postResolver = {
     createPost: async (_, { data }, { dataSources }) => {
       return dataSources.postApi.createPost(data);
     },
+    updatePost: async (_, { id: postId, data }, { dataSources }) => {
+      return dataSources.postApi.updatePost(postId, data);
+    },
+    deletePost: async (_, { id: postId }, { dataSources }) => {
+      return dataSources.postApi.deletePost(postId);
+    },
   },
 };

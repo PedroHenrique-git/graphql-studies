@@ -1,0 +1,18 @@
+mutation UPDATE_POST($updatePostId: ID!, $data: UpdatePostInput!) {
+  updatePost(id: $updatePostId, data: $data) {
+    id
+    title
+    body    
+  }
+}
+
+mutation DELETE_POST($deletePostId: ID!) {
+  deletePost(id: $deletePostId)
+}
+
+mutation CREATE_POST($data: CreatePostInput!) {
+  createPost(data: $data) {
+    id
+    title
+  }
+}

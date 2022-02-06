@@ -8,6 +8,8 @@ export const postTypeDefs = gql`
 
   extend type Mutation {
     createPost(data: CreatePostInput!): Post!
+    updatePost(id: ID!, data: UpdatePostInput!): Post!
+    deletePost(id: ID!): Boolean!
   }
 
   union PostResult = PostNotFoundError | PostTimeoutError | Post
@@ -44,5 +46,11 @@ export const postTypeDefs = gql`
     title: String!
     body: String!
     userId: String!
+  }
+
+  input UpdatePostInput {
+    title: String
+    body: String
+    userId: String
   }
 `;
