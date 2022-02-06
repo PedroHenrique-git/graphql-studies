@@ -15,4 +15,15 @@ export const userResolvers = {
       return dataSources.postApi.batchLoadByUserId(id);
     },
   },
+  Mutation: {
+    createUser: async (_, { data }, { dataSources }) => {
+      return dataSources.userApi.createUser(data);
+    },
+    updateUser: async (_, { userId, data }, { dataSources }) => {
+      return dataSources.userApi.updateUser(userId, data);
+    },
+    deleteUser: async (_, { userId }, { dataSources }) => {
+      return dataSources.userApi.deleteUser(userId);
+    },
+  },
 };

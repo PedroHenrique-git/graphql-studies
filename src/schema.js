@@ -31,6 +31,7 @@ export const typeDefs = [
   postTypeDefs,
   apiFiltersTypeDefs,
 ];
+
 export const resolvers = [
   rootResolvers,
   userResolvers,

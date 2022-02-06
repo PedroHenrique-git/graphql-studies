@@ -45,8 +45,6 @@ export const deletePostFn = async (postId, dataSource) => {
 
   const deleted = await dataSource.delete(postId);
 
-  console.log('DELETED OBJECT --> ', deleted);
-
   return !!deleted;
 };
 
