@@ -393,6 +393,38 @@
       "indexRef": 5,
       "createdAt": "2022-02-06T15:23:37.702Z",
       "id": "sU_xPaF"
+    },
+    {
+      "title": "NEW POST WITH fetch",
+      "body": "NEW POST WITH fetch",
+      "userId": "602",
+      "indexRef": 5,
+      "createdAt": "2022-02-12T19:21:26.195Z",
+      "id": "_fi0PNP"
+    },
+    {
+      "title": "NEW POST WITH fetch",
+      "body": "NEW POST WITH fetch",
+      "userId": "602",
+      "indexRef": 5,
+      "createdAt": "2022-02-12T19:41:33.878Z",
+      "id": "XaBN9HR"
+    },
+    {
+      "title": "NEW POST WITH fetch",
+      "body": "NEW POST WITH fetch",
+      "userId": "602",
+      "indexRef": 5,
+      "createdAt": "2022-02-12T19:41:39.742Z",
+      "id": "EYehDTA"
+    },
+    {
+      "title": "NEW POST WITH fetch",
+      "body": "NEW POST WITH fetch",
+      "userId": "602",
+      "indexRef": 5,
+      "createdAt": "2022-02-12T19:44:26.272Z",
+      "id": "1Y-4jq6"
     }
   ],
   "comments": [
