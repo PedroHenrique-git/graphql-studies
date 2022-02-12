@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon -r dotenv/config -r sucrase/register src/index.js",
+    "dev": "nodemon -e 'js' -r dotenv/config -r sucrase/register src/index.js",
     "start:server": "json-server --watch db.json --port 3004",
-    "dev:rest-methods": "nodemon -r dotenv/config -r sucrase/register src/rest-methods.js"
+    "dev:rest-methods": "nodemon -r dotenv/config -r sucrase/register src/rest-methods.js",
+    "dev:bcrypt": "nodemon -r dotenv/config -r sucrase/register src/bcrypt-jwt.js"
   },
   "repository": {
     "type": "git",
@@ -23,9 +24,11 @@
   "dependencies": {
     "apollo-datasource-rest": "^3.5.1",
     "apollo-server": "^3.6.2",
+    "bcrypt": "^5.0.1",
     "dataloader": "^2.0.0",
     "dotenv": "^14.3.2",
     "graphql": "^16.2.0",
+    "jsonwebtoken": "^8.5.1",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
