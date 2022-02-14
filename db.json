@@ -159,6 +159,24 @@
       "userName": "marcia_carvalho81",
       "indexRef": 1,
       "createdAt": "2016-12-08T00:49:39.870Z"
+    },
+    {
+      "firstName": "PEDRO HENRIQUE",
+      "lastName": "DA SILVA",
+      "userName": "Zax123",
+      "indexRef": 18,
+      "createdAt": "2022-02-14T01:36:14.334Z",
+      "passwordHash": "$2b$13$iYlGwP9SCWlutnGqTghQuuBN0DXpwBJKOZdL2f6uB5UxErSo89js.",
+      "id": "wINjxrF"
+    },
+    {
+      "firstName": "JOAO",
+      "lastName": "HENRIQUE",
+      "userName": "123456",
+      "indexRef": 18,
+      "createdAt": "2022-02-14T01:37:08.259Z",
+      "passwordHash": "$2b$13$yac88c6Eb87h.BQgbvFMauOc/JtauHpqF6AvdrfbZYbzxzb4FlE1i",
+      "id": "cx4c557"
     }
   ],
   "posts": [

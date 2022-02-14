@@ -1,0 +1,15 @@
+mutation CREATE_USER($data: CreateUserInput!) {
+  createUser(data: $data) {
+    id
+    firstName
+    lastName
+  }
+}
+
+mutation UPDATE_USER($userId: ID!, $data: UpdateUserInput!) {
+  updateUser(userId: $userId, data: $data) {
+    id
+    firstName
+    lastName
+  }
+}
