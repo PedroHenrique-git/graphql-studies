@@ -186,6 +186,15 @@
       "createdAt": "2022-02-17T01:56:41.113Z",
       "passwordHash": "$2b$13$FCnMe5G2b3xIDHYJTDfegu1xIeHgwOSsgBG1jK6nuip7IxOe4xpSi",
       "id": "a-aWFyw"
+    },
+    {
+      "firstName": "Marcos",
+      "lastName": "Da silva",
+      "userName": "jdas123",
+      "indexRef": 18,
+      "createdAt": "2022-02-17T22:32:41.609Z",
+      "passwordHash": "$2b$13$JaBEwIaDlasZFxRi8IB2OeP9lqv1G5bmisKhBCKFCkIfMq2Cq.CxW",
+      "id": "aAJkyXw"
     }
   ],
   "posts": [

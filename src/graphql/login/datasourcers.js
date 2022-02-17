@@ -31,7 +31,7 @@ export class LoginApi extends RESTDataSource {
 
     if (!passwordIsValid) throw new AuthenticationError('Invalid credentials');
 
-    const token = this.createJwtToken({ userName });
+    const token = this.createJwtToken({ userId });
 
     return {
       userId,

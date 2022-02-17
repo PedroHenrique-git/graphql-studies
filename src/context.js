@@ -12,8 +12,8 @@ const authorizeUser = (req) => {
 
   try {
     const [_, token] = authorization.split(' ');
-    const { userName } = jwt.verify(token, process.env.JWT_SECRET);
-    return userName;
+    const { userId } = jwt.verify(token, process.env.JWT_SECRET);
+    return userId;
   } catch (err) {
     return '';
   }
