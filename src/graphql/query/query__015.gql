@@ -1,0 +1,6 @@
+mutation MADE_LOGIN($data: LoginInput!) {
+  login(data: $data) {
+    token
+    userId
+  }
+}

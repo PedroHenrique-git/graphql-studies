@@ -177,6 +177,15 @@
       "createdAt": "2022-02-14T01:37:08.259Z",
       "passwordHash": "$2b$13$yac88c6Eb87h.BQgbvFMauOc/JtauHpqF6AvdrfbZYbzxzb4FlE1i",
       "id": "cx4c557"
+    },
+    {
+      "firstName": "Pedro",
+      "lastName": "Henrique",
+      "userName": "pedrovisque12345678",
+      "indexRef": 18,
+      "createdAt": "2022-02-17T01:56:41.113Z",
+      "passwordHash": "$2b$13$FCnMe5G2b3xIDHYJTDfegu1xIeHgwOSsgBG1jK6nuip7IxOe4xpSi",
+      "id": "a-aWFyw"
     }
   ],
   "posts": [
