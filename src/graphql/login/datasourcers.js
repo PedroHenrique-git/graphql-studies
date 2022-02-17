@@ -24,7 +24,6 @@ export class LoginApi extends RESTDataSource {
 
     const { passwordHash, id: userId } = user[0];
 
-    console.log(user);
     const passwordIsValid = await this.checkUserPassword(
       password,
       passwordHash,

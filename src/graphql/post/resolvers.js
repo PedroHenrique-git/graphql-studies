@@ -1,3 +1,5 @@
+import { AuthenticationError } from 'apollo-server';
+
 export const postResolver = {
   Query: {
     post: async (_, { id }, { dataSources }) => {
@@ -24,7 +26,8 @@ export const postResolver = {
 
       return postData;
     },
-    posts: async (_, { inputFilter }, { dataSources }) => {
+    posts: async (_, { inputFilter }, { dataSources, loggedUserId }) => {
+      if (!loggedUserId) throw new AuthenticationError('You have to log in');
       const apiFiltersInput = new URLSearchParams(inputFilter);
       const posts = await dataSources.postApi.getPosts(apiFiltersInput);
       return await posts;

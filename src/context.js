@@ -1,3 +1,4 @@
+import jwt from 'jsonwebtoken';
 import fetch from 'node-fetch';
 import getPosts from './graphql/post/utils';
 import getUsers from './graphql/user/utils';
@@ -5,7 +6,23 @@ import getUsers from './graphql/user/utils';
 const _getUsers = getUsers(fetch);
 const _getPosts = getPosts(fetch);
 
-export default () => ({
-  getUsers: _getUsers,
-  getPosts: _getPosts,
-});
+const authorizeUser = (req) => {
+  const { headers } = req;
+  const { authorization } = headers;
+
+  try {
+    const [_, token] = authorization.split(' ');
+    const { userName } = jwt.verify(token, process.env.JWT_SECRET);
+    return userName;
+  } catch (err) {
+    return '';
+  }
+};
+
+export default ({ req }) => {
+  return {
+    loggedUserId: authorizeUser(req),
+    getUsers: _getUsers,
+    getPosts: _getPosts,
+  };
+};
