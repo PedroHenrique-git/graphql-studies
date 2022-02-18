@@ -1,28 +1,39 @@
 import jwt from 'jsonwebtoken';
 import fetch from 'node-fetch';
 import getPosts from './graphql/post/utils';
+import { UserApi } from './graphql/user/datasources';
 import getUsers from './graphql/user/utils';
 
 const _getUsers = getUsers(fetch);
 const _getPosts = getPosts(fetch);
 
-const authorizeUser = (req) => {
+const authorizeUser = async (req) => {
   const { headers } = req;
   const { authorization } = headers;
 
   try {
-    const [_, token] = authorization.split(' ');
+    const [_bearer, token] = authorization.split(' ');
     const { userId } = jwt.verify(token, process.env.JWT_SECRET);
+
+    const userApi = new UserApi();
+    userApi.initialize({});
+    const foundUser = await userApi.getUser(userId);
+
+    if (foundUser.token !== token) return '';
     return userId;
-  } catch (err) {
+  } catch (e) {
     return '';
   }
 };
 
-export default ({ req }) => {
+const context = async ({ req }) => {
+  const loggedUserId = await authorizeUser(req);
+
   return {
-    loggedUserId: authorizeUser(req),
+    loggedUserId,
     getUsers: _getUsers,
     getPosts: _getPosts,
   };
 };
+
+export default context;

@@ -194,7 +194,8 @@
       "indexRef": 18,
       "createdAt": "2022-02-17T22:32:41.609Z",
       "passwordHash": "$2b$13$JaBEwIaDlasZFxRi8IB2OeP9lqv1G5bmisKhBCKFCkIfMq2Cq.CxW",
-      "id": "aAJkyXw"
+      "id": "aAJkyXw",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQUpreVh3IiwiaWF0IjoxNjQ1MTQyNjU5LCJleHAiOjE2NDU3NDc0NTl9.tIRhfPt8RThVTPWHGsZAd90Pf11viLc3ndfOSrK0mWg"
     }
   ],
   "posts": [
