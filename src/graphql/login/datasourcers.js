@@ -2,6 +2,7 @@ import { RESTDataSource } from 'apollo-datasource-rest';
 import { AuthenticationError } from 'apollo-server';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import { FetchError } from 'node-fetch';
 
 export class LoginApi extends RESTDataSource {
   constructor() {
@@ -9,7 +10,7 @@ export class LoginApi extends RESTDataSource {
     this.baseURL = `${process.env.API_URL}/users/`;
   }
 
-  async login(userName, password) {
+  async getUser(userName) {
     const user = await this.get(
       '',
       { userName },
@@ -19,6 +20,14 @@ export class LoginApi extends RESTDataSource {
         },
       },
     );
+
+    if (!user) throw new FetchError('User does not exists');
+
+    return user;
+  }
+
+  async login(userName, password) {
+    const user = await this.getUser(userName);
 
     if (user.length === 0) throw new AuthenticationError('User not found');
 
@@ -39,6 +48,22 @@ export class LoginApi extends RESTDataSource {
       userId,
       token,
     };
+  }
+
+  async logout(userName) {
+    const user = await this.getUser(userName);
+
+    if (!user) throw new FetchError('User not found');
+
+    const { id: userId } = user[0];
+
+    const logoutUser = await this.patch(
+      userId,
+      { token: '' },
+      { cacheOptions: { ttl: 0 } },
+    );
+
+    return !!logoutUser;
   }
 
   checkUserPassword(password, passwordHash) {

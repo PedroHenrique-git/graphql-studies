@@ -1,4 +1,5 @@
 import { AuthenticationError } from 'apollo-server';
+import { checkIfIsLogged } from '../login/utils/login-functions';
 
 export const postResolver = {
   Query: {
@@ -58,7 +59,9 @@ export const postResolver = {
     },
   },
   Mutation: {
-    createPost: async (_, { data }, { dataSources }) => {
+    createPost: async (_, { data }, { dataSources, loggedUserId }) => {
+      checkIfIsLogged(loggedUserId);
+      data.userId = loggedUserId;
       return dataSources.postApi.createPost(data);
     },
     updatePost: async (_, { id: postId, data }, { dataSources }) => {

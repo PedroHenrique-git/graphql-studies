@@ -196,6 +196,16 @@
       "passwordHash": "$2b$13$JaBEwIaDlasZFxRi8IB2OeP9lqv1G5bmisKhBCKFCkIfMq2Cq.CxW",
       "id": "aAJkyXw",
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhQUpreVh3IiwiaWF0IjoxNjQ1MTQyNjU5LCJleHAiOjE2NDU3NDc0NTl9.tIRhfPt8RThVTPWHGsZAd90Pf11viLc3ndfOSrK0mWg"
+    },
+    {
+      "firstName": "Pedr",
+      "lastName": "Da silva",
+      "userName": "mds123",
+      "indexRef": 18,
+      "createdAt": "2022-02-19T01:09:38.780Z",
+      "passwordHash": "$2b$13$1Y975B9b0XiBtw/v4GWEjegRjHzBikJ8fEIjPhlbGsfGHw1gZXbGy",
+      "id": "Vi6TBws",
+      "token": ""
     }
   ],
   "posts": [
@@ -462,6 +472,22 @@
       "indexRef": 5,
       "createdAt": "2022-02-12T19:44:26.272Z",
       "id": "1Y-4jq6"
+    },
+    {
+      "title": "post editado",
+      "body": "post editado",
+      "userId": "Vi6TBws",
+      "indexRef": 5,
+      "createdAt": "2022-02-19T01:15:18.302Z",
+      "id": "DfLaYEC"
+    },
+    {
+      "title": "post do marcos",
+      "body": "teste",
+      "userId": "Vi6TBws",
+      "indexRef": 5,
+      "createdAt": "2022-02-19T01:49:06.848Z",
+      "id": "iQa5Be5"
     }
   ],
   "comments": [
