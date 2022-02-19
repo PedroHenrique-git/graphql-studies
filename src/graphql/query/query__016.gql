@@ -1,0 +1,51 @@
+query GET_POSTS {
+  posts {
+    id
+    indexRef
+  }
+}
+
+mutation DELETE_POST($deletePostId: ID!) {
+  deletePost(id: $deletePostId)
+}
+
+mutation CREATE_USER($data: CreateUserInput!) {
+  createUser(data: $data) {
+    id
+  }
+}
+
+mutation LOGIN($data: LoginInput!) {
+  login(data: $data) {
+    token
+  }
+}
+
+mutation CREATE_POST($data: CreatePostInput!) {
+  createPost(data: $data) {
+    id
+    userId
+    title
+  }
+}
+
+mutation UPDATE_POST($updatePostId: ID!, $data: UpdatePostInput!) {
+  updatePost(id: $updatePostId, data: $data) {
+    id
+  }
+}
+
+mutation UPDATE_USER($userId: ID!, $data: UpdateUserInput!) {
+  updateUser(userId: $userId, data: $data) {
+    id
+    createdAt
+  }
+}
+
+mutation DELETE_USER($userId: ID!) {
+  deleteUser(userId: $userId)
+}
+
+mutation LOGOUT($userName: String!) {
+  logout(userName: $userName)
+}
