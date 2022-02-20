@@ -1,4 +1,5 @@
 import { ApolloServer } from 'apollo-server';
+import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core';
 import context from './context';
 import { LoginApi } from './graphql/login/datasourcers';
 import { PostsApi } from './graphql/post/datasources';
@@ -14,6 +15,7 @@ const server = new ApolloServer({
     userApi: new UserApi(),
     loginApi: new LoginApi(),
   }),
+  plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
 });
 
 server.listen(4003).then(({ url }) => {
