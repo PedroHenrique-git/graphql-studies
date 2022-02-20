@@ -43,11 +43,11 @@ export class LoginApi extends RESTDataSource {
     const token = this.createJwtToken({ userId });
 
     this.context.res.cookie('jwtToken', token, {
-      secure: false, // Redes seguras - Https
+      secure: true, // Redes seguras - Https
       httpOnly: true, // Não deve ser acessado via código
       maxAge: 1000 * 60 * 60 * 24 * 7, // 7 dias
       path: '/',
-      sameSite: 'strict', // strict lax none
+      sameSite: 'none', // strict lax none
     });
 
     await this.patch(userId, { token }, { cacheOptions: { ttl: 0 } });

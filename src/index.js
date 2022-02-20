@@ -1,5 +1,5 @@
 import { ApolloServer } from 'apollo-server';
-import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core';
+import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core/dist/plugin/landingPage/graphqlPlayground';
 import context from './context';
 import { LoginApi } from './graphql/login/datasourcers';
 import { PostsApi } from './graphql/post/datasources';
@@ -15,6 +15,10 @@ const server = new ApolloServer({
     userApi: new UserApi(),
     loginApi: new LoginApi(),
   }),
+  cors: {
+    origin: ['https://cdpn.io'],
+    credentials: true,
+  },
   plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
 });
 
