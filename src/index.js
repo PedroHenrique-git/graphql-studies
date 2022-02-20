@@ -1,5 +1,4 @@
 import { ApolloServer } from 'apollo-server';
-import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core/dist/plugin/landingPage/graphqlPlayground';
 import context from './context';
 import { LoginApi } from './graphql/login/datasourcers';
 import { PostsApi } from './graphql/post/datasources';
@@ -19,7 +18,7 @@ const server = new ApolloServer({
     origin: ['https://cdpn.io'],
     credentials: true,
   },
-  plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
+  //plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
 });
 
 server.listen(4003).then(({ url }) => {

@@ -1,5 +1,5 @@
 {
   "code-runner.executorMap": {
-    "javascript": "nodemon -r dotenv/config -r sucrase/register"
+    "javascript": "node -r dotenv/config -r sucrase/register"
   }
 }
