@@ -1,6 +1,7 @@
 import { gql } from 'apollo-server';
 import { apiFiltersResolvers } from './graphql/api-filters/resolvers';
 import { apiFiltersTypeDefs } from './graphql/api-filters/typedefs';
+import { commentTypeDefs } from './graphql/comment/typedefs';
 import { loginResolvers } from './graphql/login/resolvers';
 import { loginTypeDefs } from './graphql/login/typedefs';
 import { postResolver } from './graphql/post/resolvers';
@@ -33,6 +34,7 @@ export const typeDefs = [
   postTypeDefs,
   loginTypeDefs,
   apiFiltersTypeDefs,
+  commentTypeDefs,
 ];
 
 export const resolvers = [
