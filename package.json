@@ -11,7 +11,7 @@
     "dev:bcrypt": "nodemon -r dotenv/config -r sucrase/register src/bcrypt-jwt.js",
     "knex:latest": "npx knex --cwd ./src/knex migrate:latest",
     "knex:rollback": "npx knex --cwd ./src/knex migrate:rollback",
-    "knex:make": "npx knex --cwd ./src/knex migrate:make" 
+    "knex:make": "npx knex --cwd ./src/knex migrate:make"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/PedroHenrique-git/graphql-studies#readme",
   "dependencies": {
+    "apollo-datasource": "^3.3.1",
     "apollo-datasource-rest": "^3.5.1",
     "apollo-server": "^3.6.2",
     "apollo-server-core": "^3.6.3",
