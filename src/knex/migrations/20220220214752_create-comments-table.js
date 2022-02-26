@@ -8,7 +8,6 @@ exports.up = async function (knex) {
     table.increments('id').primary();
     table.text('comment', 255).notNullable();
     table.string('post_id', 255).notNullable();
-    table.string('index_ref', 255).notNullable();
     table.string('user_id', 255).notNullable();
     table.timestamps(true, true);
   });

@@ -26,7 +26,6 @@ const commentsForDb = comments.map((comment) => ({
   comment: comment.comment,
   user_id: comment.userId,
   post_id: comment.postId,
-  index_ref: comment.indexRef,
   created_at: getDate(comment.createdAt),
 }));
 

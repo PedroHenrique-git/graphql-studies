@@ -42,6 +42,9 @@ export const postResolver = {
     user: async ({ userId }, _, { dataSources }) => {
       return dataSources.userApi.batchLoadByUserId(userId);
     },
+    comments: async ({ id: post_id }, _, { dataSources }) => {
+      return dataSources.commentDb.batchLoad(post_id);
+    },
   },
   PostResult: {
     __resolveType: (obj) => {
