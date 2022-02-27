@@ -1,5 +1,6 @@
 import { ValidationError } from 'apollo-server-core';
 import { SQLDataSource } from '../globalDatasources/sql/sql-datasource';
+import { CREATED_COMMENT_TRIGGER, pubSub } from './resolvers';
 
 const commentReducer = (comment) => {
   return {
@@ -34,11 +35,17 @@ export class CommentSQLDataSource extends SQLDataSource {
 
     const created = await this.db('comments').insert(partialComment);
 
-    return {
+    const commentToReturn = {
       id: created[0],
       createdAt: new Date().toISOString(),
       ...partialComment,
     };
+
+    pubSub.publish(CREATED_COMMENT_TRIGGER, {
+      createdComment: commentToReturn,
+    });
+
+    return commentToReturn;
   }
 
   async batchLoaderCallback(postIds) {
