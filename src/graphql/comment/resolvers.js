@@ -1,7 +1,6 @@
-import { PubSub } from 'graphql-subscriptions';
 import { checkIfIsLogged } from '../login/utils/login-functions';
 
-export const pubSub = new PubSub();
+// export const pubSub = new PubSub();
 export const CREATED_COMMENT_TRIGGER = 'CREATED_COMMENT';
 
 export const commentsResolvers = {
@@ -18,11 +17,13 @@ export const commentsResolvers = {
       });
     },
   },
-  Subscription: {
-    createdComment: {
-      subscribe: () => pubSub.asyncIterator(CREATED_COMMENT_TRIGGER),
+  /* 
+    Subscription: {
+      createdComment: {
+        subscribe: () => pubSub.asyncIterator(CREATED_COMMENT_TRIGGER),
+      },
     },
-  },
+  */
   Comment: {
     user: async ({ user_id }, _, { dataSources }) => {
       const user = await dataSources.userApi.batchLoadByUserId(user_id);

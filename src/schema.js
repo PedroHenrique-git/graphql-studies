@@ -19,9 +19,9 @@ export const rootTypeDefs = gql`
     _empty: Boolean
   }
 
-  type Subscription {
-    _empty: Boolean
-  }
+  # type Subscription {
+  # _empty: Boolean
+  # }
 `;
 
 export const rootResolvers = {

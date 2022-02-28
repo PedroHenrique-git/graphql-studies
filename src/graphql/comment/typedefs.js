@@ -5,9 +5,9 @@ export const commentTypeDefs = gql`
     createComment(data: CreateCommentInput!): Comment!
   }
 
-  extend type Subscription {
-    createdComment: Comment!
-  }
+  # extend type Subscription {
+  # createdComment: Comment!
+  # }
 
   type Comment {
     id: ID!
