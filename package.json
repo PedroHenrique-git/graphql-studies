@@ -11,7 +11,9 @@
     "dev:bcrypt": "nodemon -r dotenv/config -r sucrase/register src/bcrypt-jwt.js",
     "knex:latest": "npx knex --cwd ./src/knex migrate:latest",
     "knex:rollback": "npx knex --cwd ./src/knex migrate:rollback",
-    "knex:make": "npx knex --cwd ./src/knex migrate:make"
+    "knex:make": "npx knex --cwd ./src/knex migrate:make",
+    "build": "rimraf ./dist && sucrase ./src -d ./dist --transforms imports",
+    "start": "npm run start:server && node -r dotenv/config dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -37,7 +39,8 @@
     "jsonwebtoken": "^8.5.1",
     "knex": "^1.0.3",
     "mysql": "^2.18.1",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
     "@types/node-fetch": "^3.0.3",
