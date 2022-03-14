@@ -21,7 +21,7 @@ const server = new ApolloServer({
     origin: [
       'https://cdpn.io',
       'https://studio.apollographql.com',
-      'http://localhost:3000/',
+      'http://localhost:3000',
     ],
     credentials: true,
   },
