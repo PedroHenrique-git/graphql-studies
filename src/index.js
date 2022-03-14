@@ -18,7 +18,11 @@ const server = new ApolloServer({
     commentDb: new CommentSQLDataSource(knex),
   }),
   cors: {
-    origin: ['https://cdpn.io', 'https://studio.apollographql.com'],
+    origin: [
+      'https://cdpn.io',
+      'https://studio.apollographql.com',
+      'http://localhost:3000/',
+    ],
     credentials: true,
   },
   //plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
